@@ -11,7 +11,7 @@ const Landing = () => {
         <h2>Events.me</h2>
       </div>
       <h1 className="experiment">Sign In</h1>
-      <form onSubmit={example}>
+      <form>
         <div>
           <input
             required
