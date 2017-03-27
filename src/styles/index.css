@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500|Space+Mono');
+
+
+body {
+  margin: 0;
+  padding: 10%;
+  font-family: 'Space Mono', monospace;
+  color: #DE5745;
+}
+
+p {
+  font-family: 'Space Mono', monospace;
+  color: black; 
+}
+
+.experiment {
+  font-size: 2em;
+  color: #496DD9;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.textleft {
+  text-align: left; 
+}
