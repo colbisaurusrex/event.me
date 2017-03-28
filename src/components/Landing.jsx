@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signin } from '../actions/userActions';
+import { fetchEvents } from '../actions/eventActions';
 
 import logo from '../assets/hatch_attend.svg';
 
@@ -10,16 +11,15 @@ const Landing = ({ dispatch, error }) => {
   let passwordInput = null;
 
   const signInHandler = (e) => {
-    console.log('button pressed');
     e.preventDefault();
     dispatch(signin({
-      email: emailInput,
-      password: passwordInput,
+      email: emailInput.value,
+      password: passwordInput.value,
     }))
     .then(() => {
-      console.log('something happened in redux');
+      dispatch(fetchEvents());
     })
-    .catch(err => console.log('component: ', error));
+    .catch(err => console.log('component: ', err));
   };
 
   return (
