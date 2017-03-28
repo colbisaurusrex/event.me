@@ -3,11 +3,13 @@ const axios = require('axios');
 module.exports = {
   signin: (req, res) => {
     const { email, password } = req.body;
-    console.log(email, password);
     axios.post('https://testproject-api.strv.com/auth/native', { email, password })
     .then((output) => {
-      res.set('Authorization', output.headers.authorization);
-      res.json(output.data);
+      const resObject = {
+        data: output.data,
+        token: output.headers.authorization,
+      };
+      res.json(resObject);
     })
     .catch(err => console.log(err));
   },
