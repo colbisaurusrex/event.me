@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { Router, Route, hashHistory } from 'react-router';
 
 import './styles/App.css';
 import Landing from './components/Landing.jsx';
@@ -9,11 +9,9 @@ import About from './components/About.jsx';
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Route exact path="/" component={Landing} />
-          <Route path="/about" component={About} />
-        </div>
+      <Router history={hashHistory}>
+        <Route exact path="/" component={Landing} />
+        <Route path="/about" component={About} />
       </Router>
     );
   }
