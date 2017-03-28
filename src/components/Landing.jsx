@@ -1,9 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { signin } from '../actions/userActions';
+
 import logo from '../assets/hatch_attend.svg';
 
-const Landing = () => {
+
+const Landing = ({ dispatch, error }) => {
   let emailInput = null;
   let passwordInput = null;
+
+  const signInHandler = (e) => {
+    console.log('button pressed');
+    e.preventDefault();
+    dispatch(signin({
+      email: emailInput,
+      password: passwordInput,
+    }))
+    .then(() => {
+      console.log('something happened in redux');
+    })
+    .catch(err => console.log('component: ', error));
+  };
+
   return (
     <div className="App">
       <div>
@@ -11,7 +29,7 @@ const Landing = () => {
         <h2>Events.me</h2>
       </div>
       <h1 className="experiment">Sign In</h1>
-      <form>
+      <form action="#" onSubmit={signInHandler}>
         <div>
           <input
             required
@@ -22,15 +40,15 @@ const Landing = () => {
         <div>
           <input
             required
-            type="text"
+            type="password"
             ref={(ref) => { passwordInput = ref; }}
           />
         </div>
-        <button />
+        <button type="submit">Sign In </button>
       </form>
       <h2>No Account? Sign up</h2>
     </div>
   );
 };
 
-export default Landing;
+export default connect(null)(Landing);
