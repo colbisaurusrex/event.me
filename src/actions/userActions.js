@@ -3,9 +3,9 @@ import axios from 'axios';
 export function signin(credentials) {
   return dispatch => axios.post('api/', credentials)
     .then((response) => {
-      dispatch('USER SIGNIN SUCCESSFUL');
+      dispatch({ type: 'USER SIGNIN SUCCESSFUL', payload: response.data });
     })
     .catch((err) => {
-      dispatch('USER SIGNIN UNSUCCESSFUL');
+      dispatch({ type: 'EVENT FETCH UNSUCCESSFUL', payload: '' });
     });
 }
