@@ -5,7 +5,7 @@ export default function reducer(state, action) {
   switch (action.type) {
     case 'USER SIGNIN SUCCESSFUL': {
       window.localStorage.setItem('token', action.payload.token);
-      hashHistory.push('/about');
+      hashHistory.push('/dashboard');
       break;
     }
     case 'USER SIGNIN UNSUCCESSFUL': {
