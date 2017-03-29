@@ -9,3 +9,13 @@ export function fetchEvents() {
       dispatch({ type: 'EVENT FETCH UNSUCCESSFUL', payload: 'Could not get events' });
     });
 }
+
+export function attendEvent() {
+  return dispatch => axios.post('api/events')
+  .then((response) => {
+    dispatch({ type: 'ATTEND EVENT SUCCESSFUL', payload: response.data });
+  })
+  .catch((err) => {
+    dispatch({ type: 'ATTEND EVENT UNSUCCESSFUL', payload: 'Could not attend event' });
+  });
+}
