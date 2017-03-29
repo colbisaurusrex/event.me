@@ -12,6 +12,7 @@ const renderEvents = (events, handler) => events.map(event =>
     attendees={event.attendees.length}
     capacity={event.capacity}
     attendEvent={handler}
+    id={event.id}
   />,
 );
 
