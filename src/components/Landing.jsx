@@ -6,7 +6,7 @@ import { fetchEvents } from '../actions/eventActions';
 import logo from '../assets/hatch_attend.svg';
 
 
-const Landing = ({ dispatch, error }) => {
+const Landing = ({ dispatch }) => {
   let emailInput = null;
   let passwordInput = null;
 
@@ -19,7 +19,7 @@ const Landing = ({ dispatch, error }) => {
     .then(() => {
       dispatch(fetchEvents());
     })
-    .catch(err => console.log('component: ', err));
+    .catch(err => console.log(err));
   };
 
   return (
