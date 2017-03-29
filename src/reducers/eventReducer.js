@@ -8,6 +8,12 @@ export default function reducer(state, action) {
     case 'EVENT FETCH UNSUCCESSFUL': {
       console.log('UH OH, WE GOTS NO EVENTS');
     }
+    case 'ATTEND EVENT SUCCESSFUL': {
+      newState.events = action.payload;
+    }
+    case 'ATTEND EVENT UNSUCCESSFUL': {
+      console.log('UH OH, COULD NOT ATTEND THE EVENT');
+    }
   }
   return newState;
 }
