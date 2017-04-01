@@ -2,6 +2,9 @@
   "name": "event.me",
   "version": "0.1.0",
   "private": true,
+    "engines":{
+    "node": "7.2.1" 
+  },  
   "dependencies": {
     "axios": "^0.15.3",
     "body-parser": "^1.17.1",
