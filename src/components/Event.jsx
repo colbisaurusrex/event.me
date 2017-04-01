@@ -31,13 +31,12 @@ const Event = (props) => {
   return (
     <div className="event">
       <section className="eventdescription">
-        <p>{props.title}</p>
-        <p>{props.date}</p>
-        <p>Hosted by: {props.owner}</p>
-        <p>{console.log('EVENT', renderEvents)}</p>
+        <p className="event-title">{props.title}</p>
+        <p className="event-date">{props.date}</p>
+        <p className="hosted-by">Hosted by: <span className="owner">{props.owner}</span></p>
       </section>
       <section className="attend"><img onClick={attendHandler}className="eventgraphic" src={check} alt="" /></section>
-      <section className="unattend"><img onClick={flakeHandler}className="eventgraphic" src={crossout} alt="" /></section>
+      <section className="unattend"><img onClick={flakeHandler}className="eventgraphic slide" src={crossout} alt="" /></section>
       <EventDetail
         title={props.title}
         event_id={props.id}
