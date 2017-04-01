@@ -7,15 +7,27 @@ import { signout } from '../actions/userActions';
 import CreateEvent from './CreateEvent.jsx';
 
 const Profile = (props) => {
+  const navigateToProfile = (e) => {
+    e.preventDefault();
+    hashHistory.push('/profile');
+  };
   const signUserOut = (e) => {
     e.preventDefault();
     props.dispatch(signout());
     hashHistory.push('/');
   };
+  const navigateToDashBoard = (e) => {
+    e.preventDefault();
+    hashHistory.push('/eventda shboard');
+  };
   return (
     <div>
       <div>
-        <div onClick={signUserOut}>Sign Out</div>
+        <div className="nav">
+          <span className="leftnavitem navitem" onClick={navigateToProfile}>Your Profile</span>
+          <span className="navitem" onClick={signUserOut}>Sign Out</span>
+          <span className="navitem" onClick={navigateToDashBoard}>Event Dashboard</span>
+        </div>
         <div>Create an Event</div>
         <CreateEvent />
         <h1>Events You Own</h1>

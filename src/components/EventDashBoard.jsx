@@ -13,18 +13,21 @@ const EventDashboard = (props) => {
   };
   const signUserOut = (e) => {
     e.preventDefault();
-    props.dispatch(signout())
-    .then(() => {
-      hashHistory.push('/');
-    })
-    .catch(err => console.log(err));
+    props.dispatch(signout());
+    hashHistory.push('/');
+  };
+  const navigateToDashBoard = (e) => {
+    e.preventDefault();
+    hashHistory.push('/eventdashboard');
   };
   return (
     <div>
       {props.isFetching ? <img src={fetching} className="Loading App" alt="loading" /> :
       <div className="eventcontainer">
-        <div onClick={navigateToProfile}>Your Profile</div>
-        <div onClick={signUserOut}>Sign Out</div>
+        <div className="nav">
+          <span className="leftnavitem navitem" onClick={navigateToProfile}>Your Profile</span>
+          <span className="navitem" onClick={signUserOut}>Sign Out</span>
+        </div>
         <CreateEvent />
         {renderEvents(props.events, produceAttendeeList)}
       </div>
