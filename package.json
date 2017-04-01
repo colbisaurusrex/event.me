@@ -31,6 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "nodemon server/server.js"
+    "server": "nodemon server/server.js",
+    "postinstall": "npm run build"
   }
 }
