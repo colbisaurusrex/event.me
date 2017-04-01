@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
     "engines":{
-    "node": "7.2.1" 
+    "node": "7.2.1",
+    "npm": "3.10.10"  
   },  
   "dependencies": {
     "axios": "^0.15.3",
@@ -35,6 +36,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "server": "nodemon server/server.js",
-    "postinstall": "webpack"
+    "postinstall": "npm run build"
   }
 }
