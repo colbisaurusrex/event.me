@@ -8,6 +8,7 @@ export default function reducer(state, action) {
     }
     case 'USER SIGNIN UNSUCCESSFUL': {
       console.log('YOU MAY NOT PASS GO!');
+      break;
     }
     case 'USER SIGNUP SUCCESSFUL': {
       window.localStorage.setItem('token', action.payload.token);
@@ -16,6 +17,7 @@ export default function reducer(state, action) {
     }
     case 'USER SIGNUP UNSUCCESSFUL': {
       console.log('UH OH, SIGN UP DID NOT HAPPEN!');
+      break;
     }
     case 'USER SIGN OUT': {
       window.localStorage.removeItem('token');

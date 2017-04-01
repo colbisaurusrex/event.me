@@ -31,8 +31,6 @@ export default function reducer(state, action) {
     case 'IS FETCHING IS TRUE': {
       newState.isFetching = action.payload;
     }
-
   }
-  // will need hide cases
   return newState;
 }

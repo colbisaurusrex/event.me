@@ -3,6 +3,7 @@ const axios = require('axios');
 module.exports = {
   signin: (req, res) => {
     const { email, password } = req.body;
+    console.log(req.body);
     axios.post('https://testproject-api.strv.com/auth/native', { email, password })
     .then((output) => {
       const resObject = {
@@ -17,6 +18,7 @@ module.exports = {
 
   signup: (req, res) => {
     const { email, password, firstName, lastName } = req.body;
+    console.log(req.body);
     axios.post('https://testproject-api.strv.com/users', { email, password, firstName, lastName })
     .then((output) => {
       const resObject = {

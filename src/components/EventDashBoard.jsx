@@ -16,10 +16,6 @@ const EventDashboard = (props) => {
     props.dispatch(signout());
     hashHistory.push('/');
   };
-  const navigateToDashBoard = (e) => {
-    e.preventDefault();
-    hashHistory.push('/eventdashboard');
-  };
   return (
     <div>
       {props.isFetching ? <img src={fetching} className="Loading App" alt="loading" /> :

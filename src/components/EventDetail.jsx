@@ -1,8 +1,6 @@
 import React from 'react';
 import { Line } from 'react-progressbar.js';
 import { connect } from 'react-redux';
-import { produceAttendeeList, renderEvents } from '../helpers/eventHelpers';
-import { fetchEvents, deleteEvent } from '../actions/eventActions';
 import { renderUpdate } from '../actions/renderActions';
 
 
@@ -18,12 +16,6 @@ const EventDetail = (props) => {
     width: '100px',
     height: '20px',
   };
-
-  const showUpdate = (e) => {
-    e.preventDefault();
-    props.dispatch(renderUpdate(props.id));
-  };
-
 
   return (
     <div className=" bottom  hidden" >

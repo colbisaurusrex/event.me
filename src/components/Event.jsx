@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { hashHistory } from 'react-router';
 
-import { fetchEvents, flakeEvent, attendEvent, deleteEvent } from '../actions/eventActions';
-import { renderEvents } from '../helpers/eventHelpers';
+import { fetchEvents, flakeEvent, attendEvent } from '../actions/eventActions';
 
 import EventDetail from './EventDetail.jsx';
 import check from '../assets/hatch_complete.svg';
