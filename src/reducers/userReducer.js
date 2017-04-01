@@ -1,15 +1,26 @@
-import { hashHistory } from 'react-router';
-
 export default function reducer(state, action) {
   const newState = Object.assign({}, state);
   switch (action.type) {
     case 'USER SIGNIN SUCCESSFUL': {
       window.localStorage.setItem('token', action.payload.token);
-      hashHistory.push('/dashboard');
+      window.localStorage.setItem('userid', action.payload.user_id);
       break;
     }
     case 'USER SIGNIN UNSUCCESSFUL': {
       console.log('YOU MAY NOT PASS GO!');
+    }
+    case 'USER SIGNUP SUCCESSFUL': {
+      window.localStorage.setItem('token', action.payload.token);
+      window.localStorage.setItem('userid', action.payload.user_id);
+      break;
+    }
+    case 'USER SIGNUP UNSUCCESSFUL': {
+      console.log('UH OH, SIGN UP DID NOT HAPPEN!');
+    }
+    case 'USER SIGN OUT': {
+      window.localStorage.removeItem('token');
+      window.localStorage.removeItem('userid');
+      break;
     }
   }
   return newState;
