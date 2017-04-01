@@ -14,7 +14,7 @@ module.exports = {
     const token = req.get('token');
     const headers = {
       Authorization: token,
-    }:
+    };
     axios.post(`https://testproject-api.strv.com/events/${req.query.event_id}/attendees/me/`, {}, { headers })
     .then((data) => {
       console.log('attending');
