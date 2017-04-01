@@ -32,7 +32,7 @@ const EventDetail = (props) => {
         <Line progress={(props.attending / props.capacity)} containerStyle={containerStyle} initialAnimate options={options} containerClassName={'.progressbar'} />
         <span>{props.attending}</span><span>/</span><span> {props.capacity}</span>
       </div>
-      <div>{props.attendeeHelperFunction(props.attendeeList)}</div>
+      <ul className="attendee-list">{props.attendeeHelperFunction(props.attendeeList)}</ul>
       <p>Description:</p>
       {props.description === '___' ? <p>The owner did not provide a description. So mysterious</p> : <p>{props.description}</p>}
       {window.localStorage.getItem('userid') === props.owner_id ?
