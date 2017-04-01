@@ -40,7 +40,9 @@ const CreateEvent = (props) => {
         type="datetime-local"
         ref={(ref) => { startDate = ref; }}
       />
-      <button className="shake-horizontal" type="submit">Create Event</button>
+      <div>
+        <button className="shake-horizontal" type="submit">Create Event</button>
+      </div>
     </form>
   );
 };
