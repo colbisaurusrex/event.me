@@ -1,4 +1,47 @@
+/*alphabetized by first letter only*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:500|Space+Mono');
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 10s linear;
+  height: 80px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.attend {
+	width: 294px;
+	float: left;
+  margin-top: 5%; 
+  text-align: center; 
+}
+
+.attendee-list {
+  border: dotted;
+  color: #DE5745;
+  height: 75px;
+  width: 200px;
+  overflow: scroll;
+  padding-top: 5px;
+  padding-left: 5px;
+}
 
 
 body {
@@ -8,9 +51,30 @@ body {
   color: #DE5745;
 }
 
-p {
-  font-family: 'Space Mono', monospace;
-  color: black; 
+button {
+  font-family: 'Space Mono' ,monospace;
+  -webkit-border-radius: 17;
+  -moz-border-radius: 17;
+  border-color: white; 
+  border-radius: 17px;
+  color: #ffffff;
+  font-size: 15px;
+  background: #DE5745; 
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;  
+}
+
+.bottom {
+  position: absolute; 
+  bottom: 0;
+  padding-bottom: 2%;
+  padding-left: 2%; 
+  font-size: 13px; 
+  width: 95%;
+  margin: 10px;
+  height: 50%;
+  border: dotted;
+  color: #DE5745;
 }
 
 .experiment {
@@ -20,6 +84,210 @@ p {
   font-weight: bold;
 }
 
+.eventcontainer {
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+}
+
+.event {
+  margin-top: 2%;
+  width: 960px; 
+  border-color:#496DD9;
+  border-style: dotted;
+  border-width: 5px; 
+  font-size: 0.5em; 
+  height: 300px; 
+  position: relative; 
+  -webkit-transition: height 300ms ease-out;  
+}
+.event:hover {
+   height: 500px;
+   -webkit-transition: height 300ms ease-in;    
+}
+
+.event:hover .hidden {
+  display: block;
+  opacity: 1;
+ -webkit-transition: opacity 300ms ease-in 200ms;  
+}
+
+.hidden {
+  opacity: 0;
+  overflow: scroll; 
+  -webkit-transition: opacity 100ms ease-out;
+}
+
+.hidden:focus .event {
+  height: 400px; 
+}
+
+.eventdescription {
+	width: 290px;
+	float: left;
+	padding-left: 2%; 
+}
+
+.eventgraphic {
+  height: 16em;
+}
+
+.event-title{
+  font-size: 20px;
+  color: #DE5745;
+}
+.event-date {
+  font-size: 20px;
+}
+
+.footerimage {
+  height: 15px; 
+}
+
+.hosted-by{
+  font-size: 15px;
+}
+
+input {
+    font-family: 'Space Mono' ,monospace;
+    height: 30px;
+    width: 200px;
+    margin: 8px; 
+}
+
+.Loading {
+  animation: App-logo-spin infinite 2s linear; 
+  height: 10em; 
+  margin-top: 20%;
+  margin-left: 43%; 
+}
+@keyframes Loading-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.leftnavitem {
+  margin: 0px; 
+}
+
+.nav {
+  margin-bottom: 30px;
+}
+.navitem{
+  font-size: 30px;
+  margin-left: 100px;
+}
+
+.owner {
+  font-size: 15px;
+  color: #496DD9
+}
+
+p {
+  font-family: 'Space Mono', monospace;
+  color: black; 
+}
+
+.shake-horizontal {
+	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s both;
+	-moz-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s both;
+	animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s both;
+}
+
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+  90% {
+    transform: translateX(-8px);
+  }
+}
+
 .textleft {
   text-align: left; 
 }
+
+.unattend {
+	width: 270px;
+	float: left;
+  margin-top: 5%;  
+  text-align: center; 
+}
+
+.widerinput {
+  width: 210px; 
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e13d00;
+  border: 6px dotted #ffffff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0750ff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #31e5e4;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #0069ff;
+  border-radius: 9px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

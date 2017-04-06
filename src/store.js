@@ -3,5 +3,10 @@ import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 
-export default createStore(rootReducer, applyMiddleware(thunk, createLogger()));
+const initialState = {
+  render: {
+    signForm: 'in',
+  },
+};
+export default createStore(rootReducer, initialState, applyMiddleware(thunk, createLogger()));
 
